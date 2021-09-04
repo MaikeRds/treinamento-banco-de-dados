@@ -54,5 +54,6 @@ CREATE TABLE IF NOT EXISTS cliente_transacoes (
 	tipo_transacao_id SMALLINT NOT NULL,
 	valor NUMERIC(15,2) NOT NULL,
 	data_criacao TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-	FOREIGN KEY (banco_numero,agencia_numero,conta_corrente_numero,conta_corrente_digito,cliente_numero) REFERENCES conta_corrente(banco_numero,agencia_numero,numero,digito,cliente_numero)
+	FOREIGN KEY (banco_numero,agencia_numero,conta_corrente_numero,conta_corrente_digito,cliente_numero) REFERENCES conta_corrente(banco_numero,agencia_numero,numero,digito,cliente_numero),
+	FOREIGN KEY (tipo_transacao_id) REFERENCES tipo_transacao(id)
 );
